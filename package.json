@@ -1,0 +1,20 @@
+{
+  "name": "partymode",
+  "version": "1.0.0",
+  "description": "A party mode application for playing and queuing YouTube videos",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "youtubei.js": "^14.0.0",
+    "axios": "^1.6.7",
+    "qrcode": "^1.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
