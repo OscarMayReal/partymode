@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,  interactive-widget=resizes-content"">
+        <title>PartyMode Controller</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="header-title-block">
+                <header-title>PartyMode Controller</header-title>
+                <header-room-id>Room ID: <span id="room-id"></span></header-room-id>
+            </div>
+        </header>
+        <div class="action-row">
+            <div class="action-button-block" id="confetti-button">
+                <div class="action-button" style="background-color: #257F99; color: #ffffff">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-party-popper"><path d="M5.8 11.3 2 22l10.7-3.79"></path><path d="M4 3h.01"></path><path d="M22 8h.01"></path><path d="M15 2h.01"></path><path d="M22 20h.01"></path><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"></path><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17"></path><path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7"></path><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"></path></svg>
+                </div>
+                <div class="action-text">
+                    Shoot
+                    <br>
+                    Confetti
+                </div>
+            </div>
+            <div class="action-button-block" id="toggle-instructions-button">
+                <div class="action-button" style="background-color: #257F99; color: #ffffff">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                </div>
+                <div class="action-text">
+                    Toggle
+                    <br>
+                    Instructions
+                </div>
+            </div>
+            <div class="action-button-block" id="queue-button">
+                <div class="action-button" style="background-color: #257F99; color: #ffffff">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                </div>
+                <div class="action-text">
+                    Add To
+                    <br>
+                    Queue
+                </div>
+            </div>
+            <div class="action-button-block" id="play-pause-button">
+                <div class="action-button" style="background-color: #257F99; color: #ffffff">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                </div>
+                <div class="action-text">
+                    Play /
+                    <br>
+                    Pause
+                </div>
+            </div>
+            <div class="action-button-block" id="skip-button">
+                <div class="action-button" style="background-color: #257F99; color: #ffffff">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-skip-forward"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" x2="19" y1="5" y2="19"></line></svg>
+                </div>
+                <div class="action-text">
+                    Skip
+                    <br>
+                    Video
+                </div>
+            </div>
+        </div>
+        <div id="queue-area">
+                
+        </div>
+        <div id="findVideoDialog" class="dialog">
+            <header>
+                <div style="width: 20px;"></div>
+                <header-title>Find Video</header-title>
+                <div style="flex-grow: 1;"></div>
+                <div id="closebutton" onclick="closeDialog(document.getElementById('findVideoDialog'))">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                </div>
+                <div style="width: 20px;"></div>
+            </header>
+            <div id="findVideoDialogContent" class="dialog-content">
+                <input type="text" id="findVideoInput" placeholder="Search for a video">
+                <div id="findVideoResults">
+
+                </div>
+            </div>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
